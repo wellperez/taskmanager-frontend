@@ -14,7 +14,7 @@
 <strong>Valor da variável 'userName': {{ userName }}</strong>
 
 <br />
-<input type="text" placeholder="Evento KeyDown" on-keydown="onKeyDown($event)" value="{{ userName }}">
+<input type="text" placeholder="Evento KeyDown" [(ngModel)]="userName">
 <strong>Valor da variável 'userName': {{ userName }}</strong>
 
 <br /><br />
@@ -24,7 +24,7 @@
 
 <br />
 
-<input type="text" placeholder="Evento KeyUp" on-keyup="onKeyUp($event)" value="{{ userEmail }}">
+<input type="text" placeholder="Evento KeyUp" [ngModel]="UserEmail" (ngModelChange)="userEmail=$event">
 <strong [class.bg-red]="mouseClickCount > 3">Valor da variável 'userEmail': {{ userEmail }}</strong>
 
 <style>
