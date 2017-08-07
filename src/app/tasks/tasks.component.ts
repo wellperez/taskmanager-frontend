@@ -14,10 +14,12 @@ export class TasksComponent implements OnInit {
   public selectedTask: Task;
   // private taskService: TaskService;
 
-  public constructor(private _taskService: TaskService) { }
+  public constructor(private taskService: TaskService) { }
 
   public ngOnInit() {
-    this.tasks = this._taskService.getTasks();
+    this.taskService.getTasks()
+      .then((tasks) => this.tasks = tasks)
+      .catch((error_msg) => alert(error_msg));
   }
 
   public onSelect(task: Task): void {
